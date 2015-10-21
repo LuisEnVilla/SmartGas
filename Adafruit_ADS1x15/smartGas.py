@@ -21,4 +21,5 @@ while True:
 	dweepy.dweet_for('smartgas', {'Gas': volts})
 	if (volts<=1):
 		os.system("python ../AlertWhats/run.py "+"5217721199947 "+ "'No hay gas...'")
+		os.system("python ../AlertWhats/run.py "+"5213331676227 "+ "'No hay gas...'")
 	print "%.6f" % (volts)
