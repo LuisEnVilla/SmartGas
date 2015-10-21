@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import time, signal, sys
 import dweepy
+import os
 from Adafruit_ADS1x15 import ADS1x15
 
 def signal_handler(signal, frame):
@@ -15,7 +16,9 @@ sps = 250  # 250 samples per second
 adc = ADS1x15(ic=ADS1115)
 
 while True:
-	time.sleep(0.5)
+	time.sleep(1)
 	volts = adc.readADCSingleEnded(0, gain, sps) / 1000
 	dweepy.dweet_for('smartgas', {'Gas': volts})
+	if (volts<=1):
+		os.system("python ../AlertWhats/run.py "+"5217721199947 "+ "No hay gas...")
 	print "%.6f" % (volts)
