@@ -20,5 +20,5 @@ while True:
 	volts = adc.readADCSingleEnded(0, gain, sps) / 1000
 	dweepy.dweet_for('smartgas', {'Gas': volts})
 	if (volts<=1):
-		os.system("python ../AlertWhats/run.py "+"5217721199947 "+ "No hay gas...")
+		os.system("python ../AlertWhats/run.py "+"5217721199947 "+ "'No hay gas...'")
 	print "%.6f" % (volts)
