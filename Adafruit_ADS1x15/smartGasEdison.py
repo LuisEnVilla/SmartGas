@@ -8,11 +8,11 @@ msgEnviado = False
 # Loop indefinitely
 while True:
 
-    # Read values
-    raw = slider.raw_value()
-    volts = slider.voltage_value()
+	# Read values
+	raw = slider.raw_value()
+	volts = slider.voltage_value()
 
-    print "Slider value: ", raw , " = %.2f" % volts , " V"
+	print "Slider value: ", raw , " = %.2f" % volts , " V"
 	percent = int((volts*100)/3.5)
 	dweepy.dweet_for('smartgasIoTRaspi', {'Gas': percent,'Volts':volts, 'sms':msgEnviado})
 	if (volts<=1 and msgEnviado==False):
@@ -21,5 +21,5 @@ while True:
 		#os.system("python ../AlertWhats/run.py "+"5213331676227 "+ "'No hay gas...'")
 	if(volts>1):
 		msgEnviado = False
-    # Sleep for 2.5 s
-    sleep(0.1)
+	# Sleep for 2.5 s
+	sleep(0.1)
