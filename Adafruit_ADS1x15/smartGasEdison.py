@@ -1,5 +1,7 @@
 #!/usr/bin/python
 from time import sleep
+import dweepy
+import os
 import pyupm_grove as grove
 
 # New Grove Slider on AIO pin 0
